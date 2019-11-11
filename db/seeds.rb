@@ -14,7 +14,7 @@ Bet.all.destroy_all
 puts "Destroying all comments"
 Comment.all.destroy_all
 
-puts "Creating users"
+puts "Creating Users"
 50.times do
     User.create(
         name: Faker::Name.first_name,
@@ -25,18 +25,17 @@ end
 
 puts "Creating Bets"
 50.times do
-    User.create(
-        user_id: rand(1..5),
+    Bet.create(
+        user_id: rand(1..50),
         amount: rand(1..25),
-        result: [true, false].sample,  // randomly select true or false
+        result: [true, false].sample
     )
 end
 
 puts "Creating Comments"
 50.times do
-    User.create(
-        user_id: rand(1..5),
-        amount: rand(1..25),
-        result: [true, false].sample,  // randomly select true or false
+    Comment.create(
+        user_id: rand(1..50),
+        comment: Faker::Lorem.sentence(word_count: 5, supplemental: true, random_words_to_add: 8)
     )
 end

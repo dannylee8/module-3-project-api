@@ -654,3 +654,768 @@ Migrating to AddPasswordToUsers (20191111164257)
   [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Deangelo"], ["balance", 612.0], ["created_at", "2019-11-11 18:52:45.306617"], ["updated_at", "2019-11-11 18:52:45.306617"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jamey"], ["balance", 505.0], ["created_at", "2019-11-11 18:52:45.311856"], ["updated_at", "2019-11-11 18:52:45.311856"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Howard"], ["balance", 583.0], ["created_at", "2019-11-11 18:52:45.317011"], ["updated_at", "2019-11-11 18:52:45.317011"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tanesha"], ["balance", 22.0], ["created_at", "2019-11-11 18:52:45.323493"], ["updated_at", "2019-11-11 18:52:45.323493"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kevin"], ["balance", 633.0], ["created_at", "2019-11-11 18:52:45.330099"], ["updated_at", "2019-11-11 18:52:45.330099"], ["password", "Faker::Color"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Franchesca"], ["balance", 664.0], ["created_at", "2019-11-11 18:52:45.335769"], ["updated_at", "2019-11-11 18:52:45.335769"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mitchel"], ["balance", 141.0], ["created_at", "2019-11-11 18:52:45.341475"], ["updated_at", "2019-11-11 18:52:45.341475"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Saul"], ["balance", 240.0], ["created_at", "2019-11-11 18:52:45.346264"], ["updated_at", "2019-11-11 18:52:45.346264"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tammi"], ["balance", 515.0], ["created_at", "2019-11-11 18:52:45.351299"], ["updated_at", "2019-11-11 18:52:45.351299"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aron"], ["balance", 321.0], ["created_at", "2019-11-11 18:52:45.355974"], ["updated_at", "2019-11-11 18:52:45.355974"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ernesto"], ["balance", 566.0], ["created_at", "2019-11-11 18:52:45.360674"], ["updated_at", "2019-11-11 18:52:45.360674"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mirian"], ["balance", 180.0], ["created_at", "2019-11-11 18:52:45.365619"], ["updated_at", "2019-11-11 18:52:45.365619"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Annamae"], ["balance", 198.0], ["created_at", "2019-11-11 18:52:45.370589"], ["updated_at", "2019-11-11 18:52:45.370589"], ["password", "Faker::Color"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Carolyne"], ["balance", 604.0], ["created_at", "2019-11-11 18:52:45.376138"], ["updated_at", "2019-11-11 18:52:45.376138"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Randall"], ["balance", 434.0], ["created_at", "2019-11-11 18:52:45.381663"], ["updated_at", "2019-11-11 18:52:45.381663"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Rossie"], ["balance", 852.0], ["created_at", "2019-11-11 18:52:45.388367"], ["updated_at", "2019-11-11 18:52:45.388367"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Hector"], ["balance", 347.0], ["created_at", "2019-11-11 18:52:45.394079"], ["updated_at", "2019-11-11 18:52:45.394079"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Florence"], ["balance", 312.0], ["created_at", "2019-11-11 18:52:45.399164"], ["updated_at", "2019-11-11 18:52:45.399164"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jackson"], ["balance", 585.0], ["created_at", "2019-11-11 18:52:45.403984"], ["updated_at", "2019-11-11 18:52:45.403984"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "An"], ["balance", 64.0], ["created_at", "2019-11-11 18:52:45.408721"], ["updated_at", "2019-11-11 18:52:45.408721"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tuan"], ["balance", 571.0], ["created_at", "2019-11-11 18:52:45.414091"], ["updated_at", "2019-11-11 18:52:45.414091"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cleveland"], ["balance", 445.0], ["created_at", "2019-11-11 18:52:45.419303"], ["updated_at", "2019-11-11 18:52:45.419303"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Catrice"], ["balance", 43.0], ["created_at", "2019-11-11 18:52:45.425348"], ["updated_at", "2019-11-11 18:52:45.425348"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Andra"], ["balance", 3.0], ["created_at", "2019-11-11 18:52:45.431048"], ["updated_at", "2019-11-11 18:52:45.431048"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Roman"], ["balance", 479.0], ["created_at", "2019-11-11 18:52:45.436835"], ["updated_at", "2019-11-11 18:52:45.436835"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Leonora"], ["balance", 175.0], ["created_at", "2019-11-11 18:52:45.454990"], ["updated_at", "2019-11-11 18:52:45.454990"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dino"], ["balance", 441.0], ["created_at", "2019-11-11 18:52:45.460272"], ["updated_at", "2019-11-11 18:52:45.460272"], ["password", "Faker::Color"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cruz"], ["balance", 401.0], ["created_at", "2019-11-11 18:52:45.466159"], ["updated_at", "2019-11-11 18:52:45.466159"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Taylor"], ["balance", 799.0], ["created_at", "2019-11-11 18:52:45.470879"], ["updated_at", "2019-11-11 18:52:45.470879"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ivory"], ["balance", 173.0], ["created_at", "2019-11-11 18:52:45.475741"], ["updated_at", "2019-11-11 18:52:45.475741"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Latrisha"], ["balance", 732.0], ["created_at", "2019-11-11 18:52:45.480211"], ["updated_at", "2019-11-11 18:52:45.480211"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Steve"], ["balance", 717.0], ["created_at", "2019-11-11 18:52:45.484879"], ["updated_at", "2019-11-11 18:52:45.484879"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jess"], ["balance", 451.0], ["created_at", "2019-11-11 18:52:45.489300"], ["updated_at", "2019-11-11 18:52:45.489300"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Willis"], ["balance", 956.0], ["created_at", "2019-11-11 18:52:45.493769"], ["updated_at", "2019-11-11 18:52:45.493769"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Daron"], ["balance", 204.0], ["created_at", "2019-11-11 18:52:45.498592"], ["updated_at", "2019-11-11 18:52:45.498592"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Annemarie"], ["balance", 287.0], ["created_at", "2019-11-11 18:52:45.503766"], ["updated_at", "2019-11-11 18:52:45.503766"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chauncey"], ["balance", 535.0], ["created_at", "2019-11-11 18:52:45.508380"], ["updated_at", "2019-11-11 18:52:45.508380"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Charlie"], ["balance", 910.0], ["created_at", "2019-11-11 18:52:45.513956"], ["updated_at", "2019-11-11 18:52:45.513956"], ["password", "Faker::Color"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ivey"], ["balance", 711.0], ["created_at", "2019-11-11 18:52:45.519644"], ["updated_at", "2019-11-11 18:52:45.519644"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oscar"], ["balance", 421.0], ["created_at", "2019-11-11 18:52:45.524802"], ["updated_at", "2019-11-11 18:52:45.524802"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Noel"], ["balance", 736.0], ["created_at", "2019-11-11 18:52:45.529622"], ["updated_at", "2019-11-11 18:52:45.529622"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jonathan"], ["balance", 642.0], ["created_at", "2019-11-11 18:52:45.535188"], ["updated_at", "2019-11-11 18:52:45.535188"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brain"], ["balance", 5.0], ["created_at", "2019-11-11 18:52:45.540098"], ["updated_at", "2019-11-11 18:52:45.540098"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Linda"], ["balance", 804.0], ["created_at", "2019-11-11 18:52:45.545443"], ["updated_at", "2019-11-11 18:52:45.545443"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Man"], ["balance", 791.0], ["created_at", "2019-11-11 18:52:45.551227"], ["updated_at", "2019-11-11 18:52:45.551227"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chelsey"], ["balance", 171.0], ["created_at", "2019-11-11 18:52:45.556374"], ["updated_at", "2019-11-11 18:52:45.556374"], ["password", "Faker::Color"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Azalee"], ["balance", 655.0], ["created_at", "2019-11-11 18:52:45.562967"], ["updated_at", "2019-11-11 18:52:45.562967"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "King"], ["balance", 510.0], ["created_at", "2019-11-11 18:52:45.567768"], ["updated_at", "2019-11-11 18:52:45.567768"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Nu"], ["balance", 602.0], ["created_at", "2019-11-11 18:52:45.572851"], ["updated_at", "2019-11-11 18:52:45.572851"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cordia"], ["balance", 481.0], ["created_at", "2019-11-11 18:52:45.577426"], ["updated_at", "2019-11-11 18:52:45.577426"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20191111154607)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "balance" float DEFAULT 500.0, "total_profit" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191111154607"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBets (20191111154828)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "bets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "amount" float, "result" boolean, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_87dbfdd206"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_bets_on_user_id" ON "bets" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191111154828"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20191111154858)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "comment" varchar, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191111154858"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordToUsers (20191111164257)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "password" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191111164257"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-11 19:09:37.342765"], ["updated_at", "2019-11-11 19:09:37.342765"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Garfield"], ["balance", 679.0], ["created_at", "2019-11-11 19:09:57.631431"], ["updated_at", "2019-11-11 19:09:57.631431"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Joel"], ["balance", 518.0], ["created_at", "2019-11-11 19:09:57.637079"], ["updated_at", "2019-11-11 19:09:57.637079"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lida"], ["balance", 419.0], ["created_at", "2019-11-11 19:09:57.642477"], ["updated_at", "2019-11-11 19:09:57.642477"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Porfirio"], ["balance", 305.0], ["created_at", "2019-11-11 19:09:57.655057"], ["updated_at", "2019-11-11 19:09:57.655057"], ["password", "Faker::Color"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Raylene"], ["balance", 470.0], ["created_at", "2019-11-11 19:09:57.677784"], ["updated_at", "2019-11-11 19:09:57.677784"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Johnson"], ["balance", 391.0], ["created_at", "2019-11-11 19:09:57.689136"], ["updated_at", "2019-11-11 19:09:57.689136"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Minh"], ["balance", 439.0], ["created_at", "2019-11-11 19:09:57.721956"], ["updated_at", "2019-11-11 19:09:57.721956"], ["password", "Faker::Color"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Valeria"], ["balance", 198.0], ["created_at", "2019-11-11 19:09:57.729297"], ["updated_at", "2019-11-11 19:09:57.729297"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Signe"], ["balance", 261.0], ["created_at", "2019-11-11 19:09:57.735004"], ["updated_at", "2019-11-11 19:09:57.735004"], ["password", "Faker::Color"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Colton"], ["balance", 311.0], ["created_at", "2019-11-11 19:09:57.777949"], ["updated_at", "2019-11-11 19:09:57.777949"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lavette"], ["balance", 223.0], ["created_at", "2019-11-11 19:09:57.787314"], ["updated_at", "2019-11-11 19:09:57.787314"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Coralie"], ["balance", 35.0], ["created_at", "2019-11-11 19:09:57.794764"], ["updated_at", "2019-11-11 19:09:57.794764"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Noble"], ["balance", 932.0], ["created_at", "2019-11-11 19:09:57.800642"], ["updated_at", "2019-11-11 19:09:57.800642"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Delois"], ["balance", 735.0], ["created_at", "2019-11-11 19:09:57.807337"], ["updated_at", "2019-11-11 19:09:57.807337"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jeromy"], ["balance", 347.0], ["created_at", "2019-11-11 19:09:57.812805"], ["updated_at", "2019-11-11 19:09:57.812805"], ["password", "Faker::Color"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Otha"], ["balance", 756.0], ["created_at", "2019-11-11 19:09:57.818620"], ["updated_at", "2019-11-11 19:09:57.818620"], ["password", "Faker::Color"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Roselyn"], ["balance", 877.0], ["created_at", "2019-11-11 19:09:57.824499"], ["updated_at", "2019-11-11 19:09:57.824499"], ["password", "Faker::Color"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gary"], ["balance", 551.0], ["created_at", "2019-11-11 19:09:57.830676"], ["updated_at", "2019-11-11 19:09:57.830676"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tod"], ["balance", 667.0], ["created_at", "2019-11-11 19:09:57.836124"], ["updated_at", "2019-11-11 19:09:57.836124"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Loren"], ["balance", 572.0], ["created_at", "2019-11-11 19:09:57.841222"], ["updated_at", "2019-11-11 19:09:57.841222"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Danyell"], ["balance", 858.0], ["created_at", "2019-11-11 19:09:57.846531"], ["updated_at", "2019-11-11 19:09:57.846531"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Linwood"], ["balance", 104.0], ["created_at", "2019-11-11 19:09:57.852010"], ["updated_at", "2019-11-11 19:09:57.852010"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mervin"], ["balance", 516.0], ["created_at", "2019-11-11 19:09:57.857557"], ["updated_at", "2019-11-11 19:09:57.857557"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dan"], ["balance", 296.0], ["created_at", "2019-11-11 19:09:57.862419"], ["updated_at", "2019-11-11 19:09:57.862419"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jarred"], ["balance", 559.0], ["created_at", "2019-11-11 19:09:57.868351"], ["updated_at", "2019-11-11 19:09:57.868351"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dakota"], ["balance", 282.0], ["created_at", "2019-11-11 19:09:57.874959"], ["updated_at", "2019-11-11 19:09:57.874959"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mac"], ["balance", 98.0], ["created_at", "2019-11-11 19:09:57.881040"], ["updated_at", "2019-11-11 19:09:57.881040"], ["password", "Faker::Color"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Robbie"], ["balance", 556.0], ["created_at", "2019-11-11 19:09:57.887024"], ["updated_at", "2019-11-11 19:09:57.887024"], ["password", "Faker::Color"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Raleigh"], ["balance", 72.0], ["created_at", "2019-11-11 19:09:57.893082"], ["updated_at", "2019-11-11 19:09:57.893082"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Fred"], ["balance", 109.0], ["created_at", "2019-11-11 19:09:57.900074"], ["updated_at", "2019-11-11 19:09:57.900074"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Nereida"], ["balance", 530.0], ["created_at", "2019-11-11 19:09:57.905504"], ["updated_at", "2019-11-11 19:09:57.905504"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cathy"], ["balance", 91.0], ["created_at", "2019-11-11 19:09:57.911386"], ["updated_at", "2019-11-11 19:09:57.911386"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lissa"], ["balance", 957.0], ["created_at", "2019-11-11 19:09:57.916744"], ["updated_at", "2019-11-11 19:09:57.916744"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Carmelia"], ["balance", 368.0], ["created_at", "2019-11-11 19:09:57.921836"], ["updated_at", "2019-11-11 19:09:57.921836"], ["password", "Faker::Color"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wesley"], ["balance", 602.0], ["created_at", "2019-11-11 19:09:57.926647"], ["updated_at", "2019-11-11 19:09:57.926647"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Darla"], ["balance", 957.0], ["created_at", "2019-11-11 19:09:57.932139"], ["updated_at", "2019-11-11 19:09:57.932139"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Edwardo"], ["balance", 329.0], ["created_at", "2019-11-11 19:09:57.937181"], ["updated_at", "2019-11-11 19:09:57.937181"], ["password", "Faker::Color"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Efrain"], ["balance", 282.0], ["created_at", "2019-11-11 19:09:57.942224"], ["updated_at", "2019-11-11 19:09:57.942224"], ["password", "Faker::Color"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jarrett"], ["balance", 217.0], ["created_at", "2019-11-11 19:09:57.947758"], ["updated_at", "2019-11-11 19:09:57.947758"], ["password", "Faker::Color"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Herschel"], ["balance", 732.0], ["created_at", "2019-11-11 19:09:57.953761"], ["updated_at", "2019-11-11 19:09:57.953761"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Marcus"], ["balance", 40.0], ["created_at", "2019-11-11 19:09:57.959084"], ["updated_at", "2019-11-11 19:09:57.959084"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aja"], ["balance", 703.0], ["created_at", "2019-11-11 19:09:57.964143"], ["updated_at", "2019-11-11 19:09:57.964143"], ["password", "Faker::Color"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sona"], ["balance", 298.0], ["created_at", "2019-11-11 19:09:57.970067"], ["updated_at", "2019-11-11 19:09:57.970067"], ["password", "Faker::Color"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ryan"], ["balance", 917.0], ["created_at", "2019-11-11 19:09:57.976224"], ["updated_at", "2019-11-11 19:09:57.976224"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Trinidad"], ["balance", 313.0], ["created_at", "2019-11-11 19:09:57.981916"], ["updated_at", "2019-11-11 19:09:57.981916"], ["password", "Faker::Color"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Eddie"], ["balance", 43.0], ["created_at", "2019-11-11 19:09:57.988042"], ["updated_at", "2019-11-11 19:09:57.988042"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Heidy"], ["balance", 926.0], ["created_at", "2019-11-11 19:09:57.993636"], ["updated_at", "2019-11-11 19:09:57.993636"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Vicki"], ["balance", 964.0], ["created_at", "2019-11-11 19:09:57.999461"], ["updated_at", "2019-11-11 19:09:57.999461"], ["password", "Faker::Color"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gaylord"], ["balance", 315.0], ["created_at", "2019-11-11 19:09:58.005263"], ["updated_at", "2019-11-11 19:09:58.005263"], ["password", "Faker::Color"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "balance", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Verline"], ["balance", 625.0], ["created_at", "2019-11-11 19:09:58.011483"], ["updated_at", "2019-11-11 19:09:58.011483"], ["password", "Faker::Color"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mBet Create (1.1ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 25.0], ["result", 1], ["user_id", 19], ["created_at", "2019-11-11 19:09:58.044996"], ["updated_at", "2019-11-11 19:09:58.044996"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  [1m[36mBet Create (0.5ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 12.0], ["result", 0], ["user_id", 50], ["created_at", "2019-11-11 19:09:58.053532"], ["updated_at", "2019-11-11 19:09:58.053532"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mBet Create (0.5ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 3.0], ["result", 1], ["user_id", 21], ["created_at", "2019-11-11 19:09:58.059916"], ["updated_at", "2019-11-11 19:09:58.059916"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 11.0], ["result", 0], ["user_id", 31], ["created_at", "2019-11-11 19:09:58.066541"], ["updated_at", "2019-11-11 19:09:58.066541"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 20.0], ["result", 1], ["user_id", 32], ["created_at", "2019-11-11 19:09:58.073606"], ["updated_at", "2019-11-11 19:09:58.073606"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 21.0], ["result", 1], ["user_id", 15], ["created_at", "2019-11-11 19:09:58.081117"], ["updated_at", "2019-11-11 19:09:58.081117"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 16.0], ["result", 1], ["user_id", 37], ["created_at", "2019-11-11 19:09:58.088379"], ["updated_at", "2019-11-11 19:09:58.088379"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 8.0], ["result", 0], ["user_id", 28], ["created_at", "2019-11-11 19:09:58.095882"], ["updated_at", "2019-11-11 19:09:58.095882"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mBet Create (0.5ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 23.0], ["result", 0], ["user_id", 46], ["created_at", "2019-11-11 19:09:58.103017"], ["updated_at", "2019-11-11 19:09:58.103017"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 17.0], ["result", 1], ["user_id", 23], ["created_at", "2019-11-11 19:09:58.109796"], ["updated_at", "2019-11-11 19:09:58.109796"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 9.0], ["result", 0], ["user_id", 28], ["created_at", "2019-11-11 19:09:58.116465"], ["updated_at", "2019-11-11 19:09:58.116465"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 12.0], ["result", 0], ["user_id", 12], ["created_at", "2019-11-11 19:09:58.122975"], ["updated_at", "2019-11-11 19:09:58.122975"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 10.0], ["result", 1], ["user_id", 5], ["created_at", "2019-11-11 19:09:58.129979"], ["updated_at", "2019-11-11 19:09:58.129979"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 10.0], ["result", 1], ["user_id", 21], ["created_at", "2019-11-11 19:09:58.136304"], ["updated_at", "2019-11-11 19:09:58.136304"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 19.0], ["result", 0], ["user_id", 29], ["created_at", "2019-11-11 19:09:58.143340"], ["updated_at", "2019-11-11 19:09:58.143340"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 12.0], ["result", 0], ["user_id", 8], ["created_at", "2019-11-11 19:09:58.173705"], ["updated_at", "2019-11-11 19:09:58.173705"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mBet Create (0.6ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 1.0], ["result", 0], ["user_id", 31], ["created_at", "2019-11-11 19:09:58.180675"], ["updated_at", "2019-11-11 19:09:58.180675"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 4.0], ["result", 1], ["user_id", 32], ["created_at", "2019-11-11 19:09:58.188314"], ["updated_at", "2019-11-11 19:09:58.188314"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mBet Create (0.6ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 1.0], ["result", 1], ["user_id", 30], ["created_at", "2019-11-11 19:09:58.196431"], ["updated_at", "2019-11-11 19:09:58.196431"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[36mBet Create (0.5ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 3.0], ["result", 0], ["user_id", 39], ["created_at", "2019-11-11 19:09:58.203838"], ["updated_at", "2019-11-11 19:09:58.203838"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 13.0], ["result", 1], ["user_id", 5], ["created_at", "2019-11-11 19:09:58.210287"], ["updated_at", "2019-11-11 19:09:58.210287"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 16.0], ["result", 1], ["user_id", 3], ["created_at", "2019-11-11 19:09:58.216875"], ["updated_at", "2019-11-11 19:09:58.216875"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mBet Create (0.5ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 14.0], ["result", 0], ["user_id", 24], ["created_at", "2019-11-11 19:09:58.223212"], ["updated_at", "2019-11-11 19:09:58.223212"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 14.0], ["result", 0], ["user_id", 50], ["created_at", "2019-11-11 19:09:58.230003"], ["updated_at", "2019-11-11 19:09:58.230003"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  [1m[36mBet Create (0.5ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 14.0], ["result", 1], ["user_id", 49], ["created_at", "2019-11-11 19:09:58.235895"], ["updated_at", "2019-11-11 19:09:58.235895"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBet Create (0.6ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 11.0], ["result", 0], ["user_id", 4], ["created_at", "2019-11-11 19:09:58.243974"], ["updated_at", "2019-11-11 19:09:58.243974"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 4.0], ["result", 1], ["user_id", 1], ["created_at", "2019-11-11 19:09:58.251307"], ["updated_at", "2019-11-11 19:09:58.251307"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mBet Create (0.6ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 24.0], ["result", 0], ["user_id", 28], ["created_at", "2019-11-11 19:09:58.260425"], ["updated_at", "2019-11-11 19:09:58.260425"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 11.0], ["result", 1], ["user_id", 35], ["created_at", "2019-11-11 19:09:58.267497"], ["updated_at", "2019-11-11 19:09:58.267497"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 12.0], ["result", 1], ["user_id", 19], ["created_at", "2019-11-11 19:09:58.274983"], ["updated_at", "2019-11-11 19:09:58.274983"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 18.0], ["result", 1], ["user_id", 10], ["created_at", "2019-11-11 19:09:58.282164"], ["updated_at", "2019-11-11 19:09:58.282164"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 17.0], ["result", 0], ["user_id", 24], ["created_at", "2019-11-11 19:09:58.290087"], ["updated_at", "2019-11-11 19:09:58.290087"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 6.0], ["result", 1], ["user_id", 28], ["created_at", "2019-11-11 19:09:58.296396"], ["updated_at", "2019-11-11 19:09:58.296396"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mBet Create (0.5ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 5.0], ["result", 1], ["user_id", 29], ["created_at", "2019-11-11 19:09:58.302601"], ["updated_at", "2019-11-11 19:09:58.302601"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mBet Create (0.5ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 1.0], ["result", 1], ["user_id", 25], ["created_at", "2019-11-11 19:09:58.308974"], ["updated_at", "2019-11-11 19:09:58.308974"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBet Create (0.5ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 18.0], ["result", 0], ["user_id", 9], ["created_at", "2019-11-11 19:09:58.315313"], ["updated_at", "2019-11-11 19:09:58.315313"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 13.0], ["result", 1], ["user_id", 34], ["created_at", "2019-11-11 19:09:58.321998"], ["updated_at", "2019-11-11 19:09:58.321998"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mBet Create (0.5ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 7.0], ["result", 1], ["user_id", 35], ["created_at", "2019-11-11 19:09:58.327896"], ["updated_at", "2019-11-11 19:09:58.327896"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 24.0], ["result", 0], ["user_id", 13], ["created_at", "2019-11-11 19:09:58.334262"], ["updated_at", "2019-11-11 19:09:58.334262"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBet Create (0.5ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 23.0], ["result", 1], ["user_id", 7], ["created_at", "2019-11-11 19:09:58.340803"], ["updated_at", "2019-11-11 19:09:58.340803"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 7.0], ["result", 0], ["user_id", 1], ["created_at", "2019-11-11 19:09:58.347429"], ["updated_at", "2019-11-11 19:09:58.347429"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mBet Create (0.7ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 14.0], ["result", 0], ["user_id", 24], ["created_at", "2019-11-11 19:09:58.353669"], ["updated_at", "2019-11-11 19:09:58.353669"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 13.0], ["result", 1], ["user_id", 50], ["created_at", "2019-11-11 19:09:58.360393"], ["updated_at", "2019-11-11 19:09:58.360393"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 13.0], ["result", 0], ["user_id", 7], ["created_at", "2019-11-11 19:09:58.367191"], ["updated_at", "2019-11-11 19:09:58.367191"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 12.0], ["result", 0], ["user_id", 38], ["created_at", "2019-11-11 19:09:58.374046"], ["updated_at", "2019-11-11 19:09:58.374046"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 14.0], ["result", 1], ["user_id", 27], ["created_at", "2019-11-11 19:09:58.381226"], ["updated_at", "2019-11-11 19:09:58.381226"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 22.0], ["result", 1], ["user_id", 12], ["created_at", "2019-11-11 19:09:58.388443"], ["updated_at", "2019-11-11 19:09:58.388443"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 47], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 1.0], ["result", 1], ["user_id", 47], ["created_at", "2019-11-11 19:09:58.395666"], ["updated_at", "2019-11-11 19:09:58.395666"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 21.0], ["result", 0], ["user_id", 6], ["created_at", "2019-11-11 19:09:58.401951"], ["updated_at", "2019-11-11 19:09:58.401951"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBet Create (0.4ms)[0m  [1m[32mINSERT INTO "bets" ("amount", "result", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 15.0], ["result", 0], ["user_id", 10], ["created_at", "2019-11-11 19:09:58.407743"], ["updated_at", "2019-11-11 19:09:58.407743"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Aro sed desolo turba uberrime virga ambulo quisquam adeo est."], ["user_id", 40], ["created_at", "2019-11-11 19:09:58.422961"], ["updated_at", "2019-11-11 19:09:58.422961"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Sublime turba auctus degenero voluptas accusator baiulus custodia."], ["user_id", 36], ["created_at", "2019-11-11 19:09:58.429886"], ["updated_at", "2019-11-11 19:09:58.429886"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Undique cuppedia minima tamisium totidem."], ["user_id", 32], ["created_at", "2019-11-11 19:09:58.436506"], ["updated_at", "2019-11-11 19:09:58.436506"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Eaque voluptatibus tantillus acquiro deputo aeger tristis cumque cerno."], ["user_id", 31], ["created_at", "2019-11-11 19:09:58.442464"], ["updated_at", "2019-11-11 19:09:58.442464"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Terra vigilo cibus vado quisquam cito impedit aggero et acer."], ["user_id", 42], ["created_at", "2019-11-11 19:09:58.449623"], ["updated_at", "2019-11-11 19:09:58.449623"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Caecus custodia aer calcar tripudio et ut nemo crepusculum contra tametsi demo."], ["user_id", 12], ["created_at", "2019-11-11 19:09:58.455841"], ["updated_at", "2019-11-11 19:09:58.455841"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Vitium adversus depraedor dolorem sollers cena cattus adhuc ater."], ["user_id", 42], ["created_at", "2019-11-11 19:09:58.462357"], ["updated_at", "2019-11-11 19:09:58.462357"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Beatae corrumpo aro clibanus attollo cattus vomer unde qui cribro averto."], ["user_id", 43], ["created_at", "2019-11-11 19:09:58.469383"], ["updated_at", "2019-11-11 19:09:58.469383"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Color dapifer inventore deinde dolorum cinis."], ["user_id", 15], ["created_at", "2019-11-11 19:09:58.476387"], ["updated_at", "2019-11-11 19:09:58.476387"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Astrum cruentus succurro supellex altus aut attonbitus timor."], ["user_id", 10], ["created_at", "2019-11-11 19:09:58.483352"], ["updated_at", "2019-11-11 19:09:58.483352"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Sit cohibeo doloribus cogito armarium venia tepidus tactus cumque dolore excepturi maiores."], ["user_id", 7], ["created_at", "2019-11-11 19:09:58.491033"], ["updated_at", "2019-11-11 19:09:58.491033"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Accipio vitae crux dolorem charisma."], ["user_id", 44], ["created_at", "2019-11-11 19:09:58.516809"], ["updated_at", "2019-11-11 19:09:58.516809"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Theologus sui omnis iusto baiulus subnecto provident adsidue."], ["user_id", 18], ["created_at", "2019-11-11 19:09:58.523638"], ["updated_at", "2019-11-11 19:09:58.523638"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Cilicium usitas repellendus certe communis carus at abduco trado exercitationem pel vomer."], ["user_id", 41], ["created_at", "2019-11-11 19:09:58.529753"], ["updated_at", "2019-11-11 19:09:58.529753"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Coma temporibus a combibo ascit tibi."], ["user_id", 13], ["created_at", "2019-11-11 19:09:58.535883"], ["updated_at", "2019-11-11 19:09:58.535883"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Adduco sollicito aestus vigilo congregatio curriculum assentator sint quasi tabesco addo."], ["user_id", 45], ["created_at", "2019-11-11 19:09:58.542527"], ["updated_at", "2019-11-11 19:09:58.542527"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Dedecor turpis adultus laborum et curso cubitum."], ["user_id", 35], ["created_at", "2019-11-11 19:09:58.549049"], ["updated_at", "2019-11-11 19:09:58.549049"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Summa vivo universe vacuus caries crustulum totam et canonicus solium."], ["user_id", 46], ["created_at", "2019-11-11 19:09:58.555551"], ["updated_at", "2019-11-11 19:09:58.555551"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Cunabula arca quasi tabula culpa utrimque allatus pel delego."], ["user_id", 23], ["created_at", "2019-11-11 19:09:58.562246"], ["updated_at", "2019-11-11 19:09:58.562246"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Tubineus tempora ciminatio coaegresco eos copiose thymbra."], ["user_id", 7], ["created_at", "2019-11-11 19:09:58.568276"], ["updated_at", "2019-11-11 19:09:58.568276"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Ocer corroboro clam numquam quo vinum talio turbo victus creta tripudio terebro."], ["user_id", 1], ["created_at", "2019-11-11 19:09:58.575198"], ["updated_at", "2019-11-11 19:09:58.575198"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Recusandae praesentium minus est sunt crux complectus."], ["user_id", 30], ["created_at", "2019-11-11 19:09:58.581807"], ["updated_at", "2019-11-11 19:09:58.581807"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Vinculum aliqua damno canto nihil consectetur tondeo thema alienus altus sunt."], ["user_id", 5], ["created_at", "2019-11-11 19:09:58.588570"], ["updated_at", "2019-11-11 19:09:58.588570"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Termes decerno ipsam sub aut patrocinor quas accendo consuasor."], ["user_id", 43], ["created_at", "2019-11-11 19:09:58.595410"], ["updated_at", "2019-11-11 19:09:58.595410"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Arx voluptatibus textus anser non quos delectatio caelestis adipiscor voluptatem conturbo suasoria."], ["user_id", 2], ["created_at", "2019-11-11 19:09:58.602032"], ["updated_at", "2019-11-11 19:09:58.602032"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Arx blanditiis armo pauper credo optio crastinus omnis."], ["user_id", 35], ["created_at", "2019-11-11 19:09:58.608506"], ["updated_at", "2019-11-11 19:09:58.608506"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Textus curto videlicet veritatis atqui omnis vobis abbas consectetur ultio vicinus."], ["user_id", 25], ["created_at", "2019-11-11 19:09:58.615574"], ["updated_at", "2019-11-11 19:09:58.615574"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Cenaculum adultus amet quaerat aestivus curriculum dolorem saepe decumbo."], ["user_id", 34], ["created_at", "2019-11-11 19:09:58.623497"], ["updated_at", "2019-11-11 19:09:58.623497"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Aut autem defetiscor torqueo earum abstergo decens laborum dignissimos conventus condico."], ["user_id", 5], ["created_at", "2019-11-11 19:09:58.630542"], ["updated_at", "2019-11-11 19:09:58.630542"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Cumque pauci arcus admitto stipes carbo validus ullam somnus dolorem clam abutor."], ["user_id", 12], ["created_at", "2019-11-11 19:09:58.637818"], ["updated_at", "2019-11-11 19:09:58.637818"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Absque tamdiu textus caecus fugit solitudo cogo."], ["user_id", 15], ["created_at", "2019-11-11 19:09:58.645037"], ["updated_at", "2019-11-11 19:09:58.645037"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Civitas deporto tergiversatio socius aperte tolero arto varietas vinum eum."], ["user_id", 20], ["created_at", "2019-11-11 19:09:58.651619"], ["updated_at", "2019-11-11 19:09:58.651619"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Reiciendis coniecto cervus solus nihil laboriosam cunae ventosus voluptates vestrum concido adficio."], ["user_id", 1], ["created_at", "2019-11-11 19:09:58.658169"], ["updated_at", "2019-11-11 19:09:58.658169"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Nulla consequuntur quam veritatis theca quo arcesso delicate."], ["user_id", 2], ["created_at", "2019-11-11 19:09:58.664545"], ["updated_at", "2019-11-11 19:09:58.664545"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Curto corpus aggero vespillo colloco sponte cerno."], ["user_id", 18], ["created_at", "2019-11-11 19:09:58.671473"], ["updated_at", "2019-11-11 19:09:58.671473"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Dedico caste corporis auris victoria aperiam defleo tergo utor ager."], ["user_id", 28], ["created_at", "2019-11-11 19:09:58.678705"], ["updated_at", "2019-11-11 19:09:58.678705"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Et velit cresco aureus perferendis vulgo voluptatem tondeo assentator."], ["user_id", 29], ["created_at", "2019-11-11 19:09:58.685624"], ["updated_at", "2019-11-11 19:09:58.685624"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Vapulus cito stipes nisi creo cenaculum impedit."], ["user_id", 48], ["created_at", "2019-11-11 19:09:58.693215"], ["updated_at", "2019-11-11 19:09:58.693215"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 47], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Tener aut congregatio fugit eligendi tempore."], ["user_id", 47], ["created_at", "2019-11-11 19:09:58.699856"], ["updated_at", "2019-11-11 19:09:58.699856"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Alii desipio spargo attollo coma enim sortitus torqueo."], ["user_id", 18], ["created_at", "2019-11-11 19:09:58.706606"], ["updated_at", "2019-11-11 19:09:58.706606"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Et ex tutis tempus dolorum tabella et bellicus quae quis usus."], ["user_id", 14], ["created_at", "2019-11-11 19:09:58.712726"], ["updated_at", "2019-11-11 19:09:58.712726"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Basium alias aut amplitudo voco tum velum viduata."], ["user_id", 10], ["created_at", "2019-11-11 19:09:58.718671"], ["updated_at", "2019-11-11 19:09:58.718671"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Tyrannus argumentum deleo amet caritas infit verumtamen."], ["user_id", 38], ["created_at", "2019-11-11 19:09:58.724724"], ["updated_at", "2019-11-11 19:09:58.724724"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Conturbo ascisco admoneo et aufero audeo tres."], ["user_id", 27], ["created_at", "2019-11-11 19:09:58.731611"], ["updated_at", "2019-11-11 19:09:58.731611"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Collum vel solvo calculus undique cubitum virga crepusculum confido."], ["user_id", 18], ["created_at", "2019-11-11 19:09:58.737763"], ["updated_at", "2019-11-11 19:09:58.737763"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Compello iure aro a tabgo subnecto ut consequatur accommodo autem curriculum."], ["user_id", 13], ["created_at", "2019-11-11 19:09:58.744183"], ["updated_at", "2019-11-11 19:09:58.744183"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Cornu aduro iure velit altus degenero ter confugo creo suggero."], ["user_id", 6], ["created_at", "2019-11-11 19:09:58.750695"], ["updated_at", "2019-11-11 19:09:58.750695"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Maxime casus ventosus sursum utpote viriliter civis veniam optio curtus."], ["user_id", 30], ["created_at", "2019-11-11 19:09:58.757474"], ["updated_at", "2019-11-11 19:09:58.757474"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Ars benevolentia conturbo ullam administratio ciminatio allatus."], ["user_id", 34], ["created_at", "2019-11-11 19:09:58.763864"], ["updated_at", "2019-11-11 19:09:58.763864"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Debilito attonbitus complectus valetudo adsum spiculum cohibeo vespillo coepi capto spero."], ["user_id", 6], ["created_at", "2019-11-11 19:09:58.770881"], ["updated_at", "2019-11-11 19:09:58.770881"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBet Load (0.4ms)[0m  [1m[34mSELECT "bets".* FROM "bets" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LIMIT ?[0m  [["LIMIT", 11]]
