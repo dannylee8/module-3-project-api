@@ -1,2 +1,2 @@
-# Flatiron Crash
-This repository contains the Ruby on Rails api for our Flatiron School module 3 project.
+# Flatiron Crash Development Branch
+Most development will take place in this branch for now.
