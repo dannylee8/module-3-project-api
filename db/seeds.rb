@@ -19,7 +19,8 @@ puts "Creating Users"
     User.create(
         name: Faker::Name.first_name,
         password: Faker::Color.name,
-        balance: rand(1..1000)
+        balance: rand(1..1000),
+        total_profit: rand(1..1000)
     )
 end
 
