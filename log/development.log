@@ -5900,3 +5900,898 @@ Processing by Api::V1::UsersController#index as HTML
 Completed 200 OK in 193ms (Views: 0.2ms | ActiveRecord: 14.4ms | Allocations: 90978)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDefaultToTotalProfitInUsersTable (20191111221715)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "balance" float DEFAULT 500.0, "total_profit" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password" varchar DEFAULT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","balance","total_profit","created_at","updated_at","password")
+                     SELECT "id","name","balance","total_profit","created_at","updated_at","password" FROM "users"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "balance" float DEFAULT 500.0, "total_profit" float DEFAULT 0.0, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "users" ("id","name","balance","total_profit","created_at","updated_at","password")
+                     SELECT "id","name","balance","total_profit","created_at","updated_at","password" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191111221715"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/bets" for ::1 at 2019-11-11 17:21:28 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BetsController#index as HTML
+  [1m[36mBet Load (0.4ms)[0m  [1m[34mSELECT "bets".* FROM "bets"[0m
+  ↳ app/controllers/api/v1/bets_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.48ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.1ms | Allocations: 9797)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/api/v1/bets_controller.rb:4:in `index'
+Started GET "/api/v1/users" for ::1 at 2019-11-11 17:21:32 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 7]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 7]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 8]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 8]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 11]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 11]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.8ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 13]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 13]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 14]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 14]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 15]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 15]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 16]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 16]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 17]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 17]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 18]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 18]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 19]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 19]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 20]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 20]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 21]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 21]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 22]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 22]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 23]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 23]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 24]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 24]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 25]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 25]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 26]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 26]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 27]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 27]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 28]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 28]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 29]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 29]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 30]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 30]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 33]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 33]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.3ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 35]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 35]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 36]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 36]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 37]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 37]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 38]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 38]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 39]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 39]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 40]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 40]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 41]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 41]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 42]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 42]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 43]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 43]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 44]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 44]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 45]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 45]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 46]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 46]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 47]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 47]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 50]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 50]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 240ms (Views: 0.8ms | ActiveRecord: 17.4ms | Allocations: 103982)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-11-11 17:21:35 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.3ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 7]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 7]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 8]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 8]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 11]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 11]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 13]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 13]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 14]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 14]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 15]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 15]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 16]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 16]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 17]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 17]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 18]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 18]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 19]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 19]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 20]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 20]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 21]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 21]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 22]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 22]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 23]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 23]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 24]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 24]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 25]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 25]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 26]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 26]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 27]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 27]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 28]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 28]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 29]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 29]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 30]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 30]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 33]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 33]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 35]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 35]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 36]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 36]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 37]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 37]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 38]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 38]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 39]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 39]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 40]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 40]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 41]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 41]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 42]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 42]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 43]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 43]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 44]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 44]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 45]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 45]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 46]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 46]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 47]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 47]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 50]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 50]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 189ms (Views: 0.2ms | ActiveRecord: 14.3ms | Allocations: 90995)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-11-11 17:23:44 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.8ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 7]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 7]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 8]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 8]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 11]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 11]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 13]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 13]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 14]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 14]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 15]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 15]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 16]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 16]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 17]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 17]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 18]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 18]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 19]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 19]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 20]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 20]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 21]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 21]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 22]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 22]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 23]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 23]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 24]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 24]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 25]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 25]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 26]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 26]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 27]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 27]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 28]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 28]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 29]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 29]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 30]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 30]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 33]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 33]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 35]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 35]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 36]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 36]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 37]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 37]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 38]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 38]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 39]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 39]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 40]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 40]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 41]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 41]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 42]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 42]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 43]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 43]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 44]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 44]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 45]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 45]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 46]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 46]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 47]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 47]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 50]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 50]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 248ms (Views: 0.6ms | ActiveRecord: 18.7ms | Allocations: 108759)
+
+
+Started POST "/api/v1/users" for ::1 at 2019-11-11 17:24:00 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"name"=>"coraline", "user"=>{"name"=>"coraline"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "coraline"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "coraline"], ["created_at", "2019-11-11 22:24:00.205563"], ["updated_at", "2019-11-11 22:24:00.205563"]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `create'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `create'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 51]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 51]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 3.7ms | Allocations: 4553)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-11-11 17:45:49 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.7ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 7]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 7]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 8]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 8]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 11]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 11]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 13]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 13]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 14]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 14]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 15]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 15]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 16]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 16]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 17]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 17]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 18]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 18]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 19]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 19]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 20]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 20]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 21]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 21]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 22]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 22]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 23]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 23]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 24]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 24]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 25]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 25]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 26]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 26]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 27]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 27]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 28]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 28]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 29]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 29]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 30]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 30]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 33]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 33]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 35]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 35]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 36]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 36]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 37]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 37]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 38]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 38]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 39]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 39]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 40]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 40]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 41]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 41]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 42]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 42]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 43]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 43]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 44]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 44]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 45]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 45]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 46]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 46]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 47]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 47]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.2ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 50]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 50]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mBet Load (0.1ms)[0m  [1m[34mSELECT "bets".* FROM "bets" WHERE "bets"."user_id" = ?[0m  [["user_id", 51]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 51]]
+  ↳ app/services/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 190ms (Views: 0.5ms | ActiveRecord: 16.3ms | Allocations: 92660)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
