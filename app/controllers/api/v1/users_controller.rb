@@ -2,7 +2,8 @@ class Api::V1::UsersController < ApplicationController
 
     def index
         users = User.all
-        render json: UserSerializer.new(users).to_serialized_json
+        highest_earner = User.get_highest_earner
+        render json: {all_users: users, highest_earner: highest_earner}
     end
 
     def show
