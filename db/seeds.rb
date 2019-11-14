@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-puts "Destroying users"
-User.all.destroy_all
 puts "Destroying all bets"
 Bet.all.destroy_all
 puts "Destroying all comments"
 Comment.all.destroy_all
+puts "Destroying users"
+User.all.destroy_all
 
 puts "Creating Users"
 50.times do
@@ -39,4 +39,10 @@ puts "Creating Comments"
         user_id: rand(1..50),
         comment: Faker::Lorem.sentence(word_count: 5, supplemental: true, random_words_to_add: 8)
     )
+end
+
+comments = Comment.all
+comments.each do |c| 
+    c.name = c.user.name
+    c.save
 end
