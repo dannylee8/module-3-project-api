@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_11_11_221715) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.float "balance", default: 500.0
+    t.float "balance", default: 10.0
     t.float "total_profit", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
