@@ -1,4 +1,4 @@
-class UserSerializer
+class UserSerializer < ActiveModel::Serializer
 
   def initialize(user)
     @user = user
