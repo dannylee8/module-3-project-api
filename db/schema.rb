@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2019_11_11_221715) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bets", force: :cascade do |t|
     t.float "amount"
     t.boolean "result"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_bets_on_user_id"
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_11_11_221715) do
   create_table "comments", force: :cascade do |t|
     t.string "name"
     t.string "comment"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_comments_on_user_id"
