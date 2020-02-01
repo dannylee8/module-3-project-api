@@ -34,8 +34,6 @@ A single page web (SPA) gaming app, built in the style of https://ethercrash.io.
 
 - - -
 
-### Walkthrough
+### Walkthrough (click below to view video on YouTube)
 [![Watch the video](https://img.youtube.com/vi/m2Lazu5jA8g/maxresdefault.jpg)](https://www.youtube.com/watch?v=m2Lazu5jA8g)
 
-<br>
-<br>
