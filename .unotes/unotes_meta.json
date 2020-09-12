@@ -1,0 +1,157 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "app": {
+      "name": "app",
+      "isOrdered": true,
+      "folders": {
+        "channels": {
+          "name": "channels",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "controllers": {
+          "name": "controllers",
+          "isOrdered": true,
+          "folders": {
+            "api": {
+              "name": "api",
+              "isOrdered": true,
+              "folders": {
+                "v1": {
+                  "name": "v1",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                }
+              },
+              "files": {}
+            },
+            "concerns": {
+              "name": "concerns",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            }
+          },
+          "files": {}
+        },
+        "jobs": {
+          "name": "jobs",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "mailers": {
+          "name": "mailers",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "models": {
+          "name": "models",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "services": {
+          "name": "services",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "views": {
+          "name": "views",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "bin": {
+      "name": "bin",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "config": {
+      "name": "config",
+      "isOrdered": true,
+      "folders": {
+        "environments": {
+          "name": "environments",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "initializers": {
+          "name": "initializers",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "locales": {
+          "name": "locales",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "db": {
+      "name": "db",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "lib": {
+      "name": "lib",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "log": {
+      "name": "log",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "public": {
+      "name": "public",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "storage": {
+      "name": "storage",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "test": {
+      "name": "test",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "tmp": {
+      "name": "tmp",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "vendor": {
+      "name": "vendor",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    }
+  },
+  "files": {
+    "README": 0
+  }
+}

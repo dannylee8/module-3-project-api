@@ -18,7 +18,7 @@ puts "Creating Users"
 50.times do
     User.create(
         name: Faker::Name.first_name,
-        password: Faker::Color.name,
+        password: Faker::Color.color_name,
         balance: rand(1..30),
         total_profit: rand(1..60)
     )

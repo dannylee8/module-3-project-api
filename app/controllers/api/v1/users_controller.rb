@@ -27,6 +27,7 @@ class Api::V1::UsersController < ApplicationController
         render json: {user: user}
     end
 end
+<<<<<<< HEAD
 
 # fetch('http://localhost:3000/api/v1/users', {
 # 	method: 'POST',
@@ -38,3 +39,5 @@ end
 #         name: 'Garfield'
 #     })
 # })
+=======
+>>>>>>> 1bc4c7f68763978016367c3c3f61ae68b5322f7f
